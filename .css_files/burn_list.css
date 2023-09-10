@@ -1,0 +1,25 @@
+/*This is how you comment on CSS*/
+
+/*All text is navy blue*/
+body {
+    color: navy;
+}
+
+/*Table is centered and the full width of the screen (with padding)*/
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color:blue
+}
