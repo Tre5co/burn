@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../.css_files/burn_list.css">
 </head>
 <body>
-    <table>
+    <table id="mutable-table">
         <thead>
             <tr>
                 <th>Priority</th>
@@ -15,18 +15,40 @@
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>Task</td>
+                <td class="first-column">
+                    1
+                    <button class="add-row-button">Add Task</button>
+                </td>
+                <td class="burn-item">
+
+                    Task
+                    <button class="remove-row-button">Remove</button>
+                </td>
             </tr>
             <tr>
-                <td>2</td>
-                <td>Task</td>
+                <td class="first-column">
+                    2
+                    <button class="add-row-button">Add Task</button>
+                </td>
+                <td class="burn-item">
+
+                    Task
+                    <button class="remove-row-button">Remove</button>
+                </td>
             </tr>
             <tr>
-                <td>3</td>
-                <td>Task</td>
+                <td class="first-column">
+                    3
+                    <button class="add-row-button">Add Task</button>
+                </td>
+                <td class="burn-item">
+
+                    Task
+                    <button class="remove-row-button">Remove</button>
+                </td>
             </tr>
         </tbody>
     </table>
 </body>
+<script src="../.js_files/burn_list.js"></script>
 </html>

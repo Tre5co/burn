@@ -3,6 +3,7 @@
 /*All text is navy blue*/
 body {
     color: navy;
+    background-color: #7a7c77bb
 }
 
 /*Table is centered and the full width of the screen (with padding)*/
@@ -21,5 +22,38 @@ th, td {
 
 th {
     background-color: #4CAF50;
-    color:blue
+    color:navy
+}
+
+.first-column {
+    background-color: navy;
+    color: #7a7c77bb;
+    position: relative;
+    text-align: left;
+    vertical-align: bottom;
+    width: 80px;
+}
+
+.burn-item {
+    position: relative;
+    min-height: 100px;
+    padding-bottom: 20px;
+    color: #123456;
+    background-color: #7a7c77bb;
+}
+
+.add-row-button {
+    color: lime;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to top right, navy, #7a7c77bb);
+}
+
+.remove-row-button {
+    color: lime;
+    position: absolute;
+    vertical-align: middle;
+    right: 20px;
+    background: linear-gradient(to right, #7a7c77bb, navy);
 }
