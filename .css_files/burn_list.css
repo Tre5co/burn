@@ -34,12 +34,41 @@ th {
     width: 80px;
 }
 
+.start-date {
+    position: relative;
+    min-height: 100px;
+    padding-bottom: 20px;
+    color: white;
+    background: linear-gradient(to right, navy, #7a7c77bb);
+}
+
 .burn-item {
     position: relative;
     min-height: 100px;
     padding-bottom: 20px;
     color: #123456;
     background-color: #7a7c77bb;
+}
+
+.time-log {
+    text-align: right;
+    min-height: 100px;
+    padding-bottom: 20px;
+    color: white;
+    background: linear-gradient(to left, navy, #7a7c77bb);   
+}
+
+.time-count {
+    color: white;
+}
+
+.remove-row {
+    background-color: navy;
+    color: #7a7c77bb;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    width: 80px;
 }
 
 .add-row-button {
@@ -54,6 +83,24 @@ th {
     color: lime;
     position: absolute;
     vertical-align: middle;
-    right: 20px;
+    right: 0px;
     background: linear-gradient(to right, #7a7c77bb, navy);
+}
+
+.log-time-button {
+    float: left;
+    color: orange;
+    background: linear-gradient(to right, #7a7c77bb, navy);
+    width: 100px;
+}
+
+/* ROWS */
+.last-row {
+    background-color: black;
+}
+
+.completed-row,
+.completed-row .first-column .start-date .burn-item .time-log .remove-row {
+    background-color: #4CAF50;
+    color: black;
 }
