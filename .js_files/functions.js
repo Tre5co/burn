@@ -13,14 +13,6 @@ function addToList(dict, position, item) {
     return dict;
 }
 
-let test = {
-    1: "a",
-    2: "b",
-    3: "c"
-};
-addToList(test, 2, "d");
-console.log(test);
-
 function moveBoxUp(boxId) {
     let box = document.getElementById(boxId);
     let previousRow = box.closest('tr').previousElementSibling;
@@ -42,3 +34,33 @@ function moveBoxDown(boxId) {
         targetCell.appendChild(box);
     }
 }
+
+//Add a widget that returns the y position of the cursor:
+function showPosition(event) {
+    let x = event.clientX;
+    let y = event.clientY;
+    let coor = "X coords: " + x + ", Y coords: " + y;
+    document.getElementById("demo").innerHTML = coor;
+}
+
+document.getElementById("add-column").addEventListener("click", function() {
+    // Add new header
+    const th = document.createElement("th");
+    th.textContent = `Col${document.querySelector("#mutable-table thead tr").children.length + 1}`;
+    document.querySelector("#mutable-table thead tr").appendChild(th);
+
+    // Add data cells to each row in the body
+    document.querySelectorAll("#mutable-table tbody tr").forEach(row => {
+        const td = document.createElement("td");
+        td.textContent = `Data${row.children.length + 1}`;
+        row.appendChild(td);
+    });
+});
+
+const newRow = document.createElement("tr");
+document.querySelector("#mutable-table thead tr").children.length.forEach(() => {
+    const td = document.createElement("td");
+    td.textContext = "NewData";
+    newRow.appendChild(td);
+});
+document.querySelector

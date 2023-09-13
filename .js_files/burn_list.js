@@ -1,22 +1,43 @@
 const today = new Date();   
 const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
-
-const tableBody = document.querySelector("#mutable-table tbody");
 let burnItems = {};
+const tableBody = document.querySelector("#mutable-table tbody");
+const saveButton = document.querySelector(".save-button");
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    tableBody.addEventListener("click", function(event) {
+        if (event.target.classList.contains("add-row-button") || 
+            event.target.parentElement.classList.contains("add-row-button")) {
+            handleAddRowButtonClick(event);
+        } else if (event.target.classList.contains("remove-row-button")) {
+            handleRemoveRowButtonClick(event);
+        } else if (event.target.classList.contains("log-time-button")) {
+            handleLogTimeButtonClick(event);
+        }
+    });
+
+    saveButton.addEventListener("click", function(event) {
+        if (event.target.classList.contains("save-button")) {
+            // save a table with each html element as a .csv file
+            saveTableAsCSV(tableBody);
+        }
+    });
+});
+
+function saveTableAsCSV(table) {
+    pass
+}
 
 function addBurnItem(key, value) {
     burnItems[key] = value;
 }
-
 function removeBurnItem(key) {
     delete burnItems[key];
 }
-
 function getBurnItem(key) {
     return burnItems[key];
 }
-
 function createNewRow() {
     const newRow = document.createElement("tr");
 
@@ -72,7 +93,6 @@ function createNewRow() {
 
     return newRow;
 }
-
 function handleAddRowButtonClick(event) {
     const newRow = createNewRow();
     let parentRow;
@@ -86,7 +106,6 @@ function handleAddRowButtonClick(event) {
     tableBody.insertBefore(newRow, parentRow);
     renumberRows();
 }
-
 function handleRemoveRowButtonClick(event) {
     const targetRow = event.target.parentElement.parentElement;
     tableBody.removeChild(targetRow);
@@ -95,7 +114,6 @@ function handleRemoveRowButtonClick(event) {
     lastRow.insertAdjacentElement("afterend", targetRow);
     renumberRows();
 }
-
 function handleLogTimeButtonClick(event) {
     const targetCell = event.target.parentElement;
     const parentRow = targetCell.parentElement;
@@ -115,18 +133,6 @@ function handleLogTimeButtonClick(event) {
         addBurnItem(burnItem, totalTime);
     }
 }
-
-tableBody.addEventListener("click", function(event) {
-    if (event.target.classList.contains("add-row-button") || 
-        event.target.parentElement.classList.contains("add-row-button")) {
-        handleAddRowButtonClick(event);
-    } else if (event.target.classList.contains("remove-row-button")) {
-        handleRemoveRowButtonClick(event);
-    } else if (event.target.classList.contains("log-time-button")) {
-        handleLogTimeButtonClick(event);
-    }
-});
-
 function renumberRows() {
     // Time spent = "Time taken" if below last row
     // Start-date and end date displayed.
@@ -181,3 +187,4 @@ function renumberRows() {
         } else { lastColumn.innerHTML = ""; }
     });
 }
+
